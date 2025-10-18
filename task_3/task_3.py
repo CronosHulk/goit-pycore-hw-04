@@ -3,8 +3,6 @@
 # Розробіть скрипт, який приймає шлях до директорії в якості аргументу командного рядка і візуалізує структуру цієї директорії,
 #  виводячи імена всіх піддиректорій та файлів. Для кращого візуального сприйняття, імена директорій та файлів мають відрізнятися за кольором.
 
-
-
 # Вимоги до завдання:
 
 # Створіть віртуальне оточення Python для ізоляції залежностей проекту.
@@ -54,7 +52,6 @@ import sys
 import os
 from pathlib import Path
 from colorama import Fore, Style
-from typing import List
 
 COLOR_DIR = Fore.BLUE + Style.BRIGHT
 COLOR_FILE = Fore.GREEN              
@@ -71,7 +68,7 @@ def display_tree(root_path=Path, prefix='', is_root=True):
         print(f"{COLOR_DIR}# 📦{root_name}{COLOR_RESET}")
 
     try:
-        entries = sorted(list(root_path.iterdir()))
+        entries = sorted(root_path.iterdir())
     except Exception as e:
         print(f"{prefix} ❌ {Fore.RED}Помилка доступу до {root_path.name}: {e}{COLOR_RESET}")
         return
