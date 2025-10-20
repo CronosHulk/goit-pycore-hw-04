@@ -59,7 +59,7 @@ def total_salary(path):
         if dev_count > 0:
             average = total / dev_count
             
-        return (int(total), int(average))
+        return (total, average)
     except FileNotFoundError:
         print(f"Помилка: Файл за шляхом '{path}' не знайдено.")
         return (0, 0)
@@ -70,5 +70,5 @@ def total_salary(path):
 
 total, average = total_salary('salary.txt')
 
-
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
+# Приводил к инту потому что в "Очікуваний результат" не было дробной части
+print(f"Загальна сума заробітної плати: {total:.2f}, Середня заробітна плата: {average:.2f}")
