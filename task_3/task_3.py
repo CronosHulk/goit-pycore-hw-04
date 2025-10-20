@@ -114,3 +114,6 @@ def visualize_directory_structure():
 
 
 visualize_directory_structure()
+
+# pip install -r requirements.txt
+# python3 task_3.py picture
